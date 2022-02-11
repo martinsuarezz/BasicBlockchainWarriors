@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Simple App</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+
+</head>
+
+<body>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+    <script src="js/index.js"></script>
+
+    <div class="container-sm">
+        <div class="row-10">
+            <button class="btn btn-outline-primary" type="button" id="button-metamask" onclick="connectMetamask()">Connect metamask</button>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="container border border-dark rounded">
+        <br>
+        <div class="row">
+            <div class="col-9">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2" id="player-name-form">
+                    <button class="btn btn-outline-secondary" type="button" id="button-create-player"
+                        onclick="createPlayer(document.getElementById('player-name-form').value)">Create player</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <div class="row">
+          <div class="col">
+            <a id="player-name"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            Health: <a id="player-health">0</a>
+          </div>
+          <div class="col">
+            Attack: <a id="player-attack">0</a>
+            <button type="button" class="btn btn-outline-success" id="button-train-attack" onclick="trainAttack()">Train</button>
+          </div>
+          <div class="col">
+            Defense: <a id="player-defense">0</a>
+            <button type="button" class="btn btn-outline-success" onclick="trainDefense()">Train</button>
+          </div>
+          <div class="col">
+            Magic: <a id="player-magic">0</a>
+            <button type="button" class="btn btn-outline-success" onclick="trainMagic()">Train</button>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button type="button" class="btn btn-warning" id="button-get-player" onclick="getPlayer()">Get my player</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container border border-dark rounded">
+        <div class="row">
+          <div class="col">
+            <a id="other-player-name"></a>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              Health: <a id="other-player-health">0</a>
+            </div>
+            <div class="col">
+              Attack: <a id="other-player-attack">0</a>
+            </div>
+            <div class="col">
+              Defense: <a id="other-player-defense">0</a>
+            </div>
+            <div class="col">
+              Magic: <a id="other-player-magic">0</a>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="button-addon2" id="other-address">
+                    <button class="btn btn-outline-secondary" type="button" id="button-get-other-player"
+                            onclick="getOtherPlayer(document.getElementById('other-address').value)">Get player</button>
+                    <button class="btn btn-outline-danger" type="button" id="button-attack-player"
+                            onclick="attackPlayer(document.getElementById('other-address').value)">Attack player</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <h2>Instructions</h2>
+        <ul>
+            <li>Connect to metamask (Ropsten network) by clicking "Connect metamask"</li>
+            <li>Create a player by entering a name and clicking on "Create Player"</li>
+            <li>View your player stats by clicking on "Get my player"</li>
+            <li>Train your player with the "Train" buttons</li>
+            <li>View other players stats by entering an address and clicking "Get player"</li>
+            <li>Attack other players stats by entering an address and clicking "Attack player"</li>
+            <li>You can see my player with: 0x9bA77991FcE527E161A0AfB6F5Bad28a3D06eDb7</li>
+        </ul>
+    </div>
+    
+    
+</body>
+</html>
