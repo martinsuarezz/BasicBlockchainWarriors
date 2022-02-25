@@ -4,6 +4,8 @@ The front-end was done with JavaScript. It connects to a Smart contract deployed
 
 The smart contract was developed and tested using Hardhat.
 
+A live version could be seen at: <https://martinsuarezz.github.io/BasicBlockchainWarriors/>
+
 The contract code is the following:
 
 ```solidity
